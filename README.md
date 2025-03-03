@@ -329,7 +329,7 @@ class Engenheiro extends Pessoa {
 
 ---
 
-## Métodos Estáticos (Static)
+## Métodos Estáticos
 
 Métodos que podem ser chamados sem instanciar a classe.
 
