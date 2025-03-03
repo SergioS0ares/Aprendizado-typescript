@@ -24,7 +24,7 @@ Este repositório contém meus estudos e experimentos em TypeScript, abordando c
 13. [Herança](#herança)
 14. [Getters e Setters](#getters-e-setters)
 15. [Classes Abstratas](#classes-abstratas)
-16. [Métodos Estáticos (Static)](#métodos-estaticos-static)
+16. [Métodos Estáticos (Static)](#métodos-estaticos)
 17. [Readonly](#readonly)
 18. [Interfaces com Implements](#interfaces-com-implements)
 ---
@@ -329,7 +329,7 @@ class Engenheiro extends Pessoa {
 
 ---
 
-## Métodos Estáticos (Static) {#métodos-estaticos-static}
+## Métodos Estáticos (Static)
 
 Métodos que podem ser chamados sem instanciar a classe.
 
