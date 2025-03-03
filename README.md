@@ -29,7 +29,7 @@ Este repositório contém meus estudos e experimentos em TypeScript, abordando c
 18. [Interfaces com Implements](#interfaces-com-implements)
 ---
 
-## 🔹 Configuração Inicial
+## Configuração Inicial
 
 Antes de começar, é necessário instalar o TypeScript globalmente:
 ```bash
