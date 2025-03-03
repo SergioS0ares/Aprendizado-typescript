@@ -61,7 +61,7 @@ console.log(pedido("1234"));
 
 ---
 
-## 🔹 Tipos Primitivos
+## Tipos Primitivos
 
 O TypeScript adiciona tipagem ao JavaScript, garantindo mais segurança ao código.
 
@@ -78,7 +78,7 @@ statusPedido = false;
 
 ---
 
-## 🔹 Arrays e Objetos
+## Arrays e Objetos
 
 Podemos definir arrays e objetos com tipos específicos:
 
@@ -98,7 +98,7 @@ let pedido: [string, number, boolean] = ["Pizza", 2, true];
 
 ---
 
-## 🔹 Any e Union Types
+## Any e Union Types
 
 O tipo `any` permite qualquer tipo de valor:
 ```typescript
@@ -116,7 +116,7 @@ valor = 123;
 
 ---
 
-## 🔹 Tipos Especiais: Void e Never
+## Tipos Especiais: Void e Never
 
 ### `void` - Indica que uma função não retorna valor:
 ```typescript
@@ -134,7 +134,7 @@ const erro = (): never => {
 
 ---
 
-## 🔹 Type Aliases
+## Type Aliases
 
 O `type` permite criar nomes personalizados para tipos:
 ```typescript
@@ -147,7 +147,7 @@ usuarioID = "abc123";
 
 ---
 
-## 🔹 String Literal Types
+## String Literal Types
 
 Define valores específicos para uma variável:
 ```typescript
@@ -157,7 +157,7 @@ eventoMouse = "click";
 
 ---
 
-## 🔹 Parâmetros Opcionais
+## Parâmetros Opcionais
 
 Um parâmetro opcional pode ou não ser passado para a função:
 ```typescript
@@ -171,7 +171,7 @@ console.log(saudar("Sérgio", 31));
 
 ---
 
-## 🔹 Enum
+## Enum
 
 O `enum` permite criar conjuntos de valores nomeados:
 ```typescript
@@ -191,7 +191,7 @@ console.log(aniversario);
 
 ---
 
-## 🔹 Classes
+## Classes
 
 Classes permitem criar estruturas baseadas em objetos com propriedades e métodos definidos.
 
@@ -212,7 +212,7 @@ console.log(pessoa1.nome); // Sergio Soares
 
 ---
 
-## 🔹 Métodos
+## Métodos
 
 Métodos permitem definir comportamentos dentro da classe.
 
@@ -237,7 +237,7 @@ console.log(pessoa.saudacao());
 
 ---
 
-## 🔹 Modificadores de Acesso
+## Modificadores de Acesso
 
 Definem o nível de acesso dos atributos e métodos da classe.
 
@@ -261,7 +261,7 @@ class Pessoa {
 
 ---
 
-## 🔹 Herança
+## Herança
 
 Permite que uma classe herde atributos e métodos de outra classe.
 
@@ -285,7 +285,7 @@ console.log(dog.latir()); // Au Au!
 
 ---
 
-## 🔹 Getters e Setters
+## Getters e Setters
 
 Usados para proteger dados e definir lógica de leitura e alteração.
 
@@ -311,7 +311,7 @@ class Pessoa {
 
 ---
 
-## 🔹 Classes Abstratas
+## Classes Abstratas
 
 Definem estruturas que devem ser implementadas por classes filhas.
 
@@ -329,7 +329,7 @@ class Engenheiro extends Pessoa {
 
 ---
 
-## 🔹 Métodos Estáticos (Static)
+## Métodos Estáticos (Static)
 
 Métodos que podem ser chamados sem instanciar a classe.
 
@@ -345,7 +345,7 @@ console.log(Utils.somar(5, 3)); // 8
 
 ---
 
-## 🔹 Readonly
+## Readonly
 
 Atributos que não podem ser modificados após a inicialização.
 
@@ -360,7 +360,7 @@ class Pessoa {
 
 ---
 
-## 🔹 Interfaces com Implements
+## Interfaces com Implements
 
 Define um contrato para uma classe.
 
