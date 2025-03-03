@@ -387,5 +387,3 @@ class Professor implements Pessoa {
 ```
 
 ---
-
-Este documento será atualizado conforme o avanço nos estudos de TypeScript. 🚀
