@@ -17,6 +17,16 @@ Este repositório contém meus estudos e experimentos em TypeScript, abordando c
 8. [Parâmetros Opcionais](#parâmetros-opcionais)
 9. [Enum](#enum)
 
+### 🔹 Classes e Programação Orientada a Objetos (POO)
+10. [Classes](#classes)
+11. [Métodos](#métodos)
+12. [Modificadores de Acesso](#modificadores-de-acesso)
+13. [Herança](#herança)
+14. [Getters e Setters](#getters-e-setters)
+15. [Classes Abstratas](#classes-abstratas)
+16. [Métodos Estáticos (Static)](#métodos-estaticos-static)
+17. [Readonly](#readonly)
+18. [Interfaces com Implements](#interfaces-com-implements)
 ---
 
 ## 🔹 Configuração Inicial
@@ -177,6 +187,203 @@ const aniversario: { nome: string; mes: Mes } = {
 };
 
 console.log(aniversario);
+```
+
+---
+
+## 🔹 Classes
+
+Classes permitem criar estruturas baseadas em objetos com propriedades e métodos definidos.
+
+```typescript
+class Pessoa {
+    nome: string;
+    idade: number;
+
+    constructor(nome: string, idade: number) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+const pessoa1 = new Pessoa("Sergio Soares", 31);
+console.log(pessoa1.nome); // Sergio Soares
+```
+
+---
+
+## 🔹 Métodos
+
+Métodos permitem definir comportamentos dentro da classe.
+
+```typescript
+class Pessoa {
+    nome: string;
+    idade: number;
+
+    constructor(nome: string, idade: number) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    saudacao(): string {
+        return `Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`;
+    }
+}
+
+const pessoa = new Pessoa("João", 25);
+console.log(pessoa.saudacao());
+```
+
+---
+
+## 🔹 Modificadores de Acesso
+
+Definem o nível de acesso dos atributos e métodos da classe.
+
+- `public`: acessível em qualquer lugar
+- `protected`: acessível apenas dentro da classe e subclasses
+- `private`: acessível apenas dentro da própria classe
+
+```typescript
+class Pessoa {
+    public nome: string;
+    protected idade: number;
+    private senha: string;
+
+    constructor(nome: string, idade: number, senha: string) {
+        this.nome = nome;
+        this.idade = idade;
+        this.senha = senha;
+    }
+}
+```
+
+---
+
+## 🔹 Herança
+
+Permite que uma classe herde atributos e métodos de outra classe.
+
+```typescript
+class Animal {
+    nome: string;
+    constructor(nome: string) {
+        this.nome = nome;
+    }
+}
+
+class Cachorro extends Animal {
+    latir() {
+        return "Au Au!";
+    }
+}
+
+const dog = new Cachorro("Rex");
+console.log(dog.latir()); // Au Au!
+```
+
+---
+
+## 🔹 Getters e Setters
+
+Usados para proteger dados e definir lógica de leitura e alteração.
+
+```typescript
+class Pessoa {
+    private _idade: number;
+
+    constructor(idade: number) {
+        this._idade = idade;
+    }
+
+    get idade(): number {
+        return this._idade;
+    }
+
+    set idade(valor: number) {
+        if (valor >= 0) {
+            this._idade = valor;
+        }
+    }
+}
+```
+
+---
+
+## 🔹 Classes Abstratas
+
+Definem estruturas que devem ser implementadas por classes filhas.
+
+```typescript
+abstract class Pessoa {
+    abstract profissao(): string;
+}
+
+class Engenheiro extends Pessoa {
+    profissao(): string {
+        return "Engenheiro Civil";
+    }
+}
+```
+
+---
+
+## 🔹 Métodos Estáticos (Static)
+
+Métodos que podem ser chamados sem instanciar a classe.
+
+```typescript
+class Utils {
+    static somar(a: number, b: number): number {
+        return a + b;
+    }
+}
+
+console.log(Utils.somar(5, 3)); // 8
+```
+
+---
+
+## 🔹 Readonly
+
+Atributos que não podem ser modificados após a inicialização.
+
+```typescript
+class Pessoa {
+    readonly nome: string;
+    constructor(nome: string) {
+        this.nome = nome;
+    }
+}
+```
+
+---
+
+## 🔹 Interfaces com Implements
+
+Define um contrato para uma classe.
+
+```typescript
+interface Pessoa {
+    nome: string;
+    idade: number;
+    falar(): void;
+}
+
+class Professor implements Pessoa {
+    nome: string;
+    idade: number;
+
+    constructor(nome: string, idade: number) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    falar() {
+        console.log("Bom dia, turma!");
+    }
+}
 ```
 
 ---
