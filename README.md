@@ -1,3 +1,4 @@
+
 # 📘 Aprendizado em TypeScript
 
 Este repositório contém meus estudos e experimentos em TypeScript, abordando conceitos básicos, boas práticas e exemplos práticos para reforçar o aprendizado.
@@ -27,31 +28,42 @@ Este repositório contém meus estudos e experimentos em TypeScript, abordando c
 16. [Métodos Estáticos](#métodos-estáticos)
 17. [Readonly](#readonly)
 18. [Interfaces com Implements](#interfaces-com-implements)
+
+### 🔹 Novos Conceitos
+19. [Namespace](#namespace)
+20. [Interface](#interface)
+21. [Compilador TypeScript](#compilador-typescript)
+
 ---
 
 ## Configuração Inicial
 
 Antes de começar, é necessário instalar o TypeScript globalmente:
+
 ```bash
 npm install -g typescript
 ```
 
 Para inicializar um projeto TypeScript:
+
 ```bash
 tsc --init
 ```
 
 Para rodar o código TypeScript diretamente:
+
 ```bash
 npm i -g ts-node
 ```
 
 Executando arquivos `.ts`:
+
 ```bash
 ctrl + alt + n
 ```
 
 Exemplo de código básico em TypeScript:
+
 ```typescript
 const pedido = (pedido: string): string => {
   return `Seu pedido foi recebido: ${pedido}`;
@@ -92,6 +104,7 @@ let cliente: { nome: string; idade: number } = {
 ```
 
 Também podemos usar tuplas:
+
 ```typescript
 let pedido: [string, number, boolean] = ["Pizza", 2, true];
 ```
@@ -101,6 +114,7 @@ let pedido: [string, number, boolean] = ["Pizza", 2, true];
 ## Any e Union Types
 
 O tipo `any` permite qualquer tipo de valor:
+
 ```typescript
 let variavel: any = "Texto";
 variavel = 10;
@@ -108,6 +122,7 @@ variavel = true;
 ```
 
 O `Union Type` permite múltiplos tipos para uma variável:
+
 ```typescript
 let valor: string | number;
 valor = "Sérgio";
@@ -119,6 +134,7 @@ valor = 123;
 ## Tipos Especiais: Void e Never
 
 ### `void` - Indica que uma função não retorna valor:
+
 ```typescript
 const logMensagem = (mensagem: string): void => {
   console.log(mensagem);
@@ -126,6 +142,7 @@ const logMensagem = (mensagem: string): void => {
 ```
 
 ### `never` - Indica que a função nunca chega a um fim normal:
+
 ```typescript
 const erro = (): never => {
   throw new Error("Erro crítico!");
@@ -137,6 +154,7 @@ const erro = (): never => {
 ## Type Aliases
 
 O `type` permite criar nomes personalizados para tipos:
+
 ```typescript
 type ID = string | number;
 
@@ -150,6 +168,7 @@ usuarioID = "abc123";
 ## String Literal Types
 
 Define valores específicos para uma variável:
+
 ```typescript
 let eventoMouse: "click" | "dblclick" | "mouseup";
 eventoMouse = "click";
@@ -160,6 +179,7 @@ eventoMouse = "click";
 ## Parâmetros Opcionais
 
 Um parâmetro opcional pode ou não ser passado para a função:
+
 ```typescript
 const saudar = (nome: string, idade?: number): string => {
   return idade ? `Nome: ${nome}, Idade: ${idade}` : `Nome: ${nome}, Idade não informada`;
@@ -174,6 +194,7 @@ console.log(saudar("Sérgio", 31));
 ## Enum
 
 O `enum` permite criar conjuntos de valores nomeados:
+
 ```typescript
 enum Mes {
   JAN = "Janeiro",
@@ -383,6 +404,85 @@ class Professor implements Pessoa {
     falar() {
         console.log("Bom dia, turma!");
     }
+}
+```
+
+---
+
+## Namespace
+
+Namespace ajuda a organizar o código, especialmente quando lidamos com muitos módulos.
+
+```typescript
+namespace Pedido {
+    export class Pedido {
+        nome: string;
+        quantidade: number;
+
+        constructor(nome: string, quantidade: number) {
+            this.nome = nome;
+            this.quantidade = quantidade;
+        }
+
+        detalhar() {
+            return `${this.quantidade} unidades de ${this.nome}`;
+        }
+    }
+}
+
+const pedido1 = new Pedido.Pedido("Pizza", 3);
+console.log(pedido1.detalhar());
+```
+
+---
+
+## Interface
+
+Uma interface define a estrutura para um objeto, especificando que propriedades e métodos ele deve ter.
+
+```typescript
+interface Produto {
+    nome: string;
+    preco: number;
+    mostrarProduto(): string;
+}
+
+class ProdutoConcreto implements Produto {
+    nome: string;
+    preco: number;
+
+    constructor(nome: string, preco: number) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    mostrarProduto() {
+        return `Produto: ${this.nome}, Preço: R$${this.preco}`;
+    }
+}
+
+const produto = new ProdutoConcreto("Hamburguer", 20);
+console.log(produto.mostrarProduto());
+```
+
+---
+
+## Compilador TypeScript
+
+O compilador TypeScript é responsável por transformar o código TypeScript em JavaScript executável. O arquivo de configuração `tsconfig.json` permite personalizar esse processo.
+
+Exemplo de configuração no `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
 ```
 
