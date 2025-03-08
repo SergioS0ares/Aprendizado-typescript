@@ -1,4 +1,3 @@
-
 # 📘 Aprendizado em TypeScript
 
 Este repositório contém meus estudos e experimentos em TypeScript, abordando conceitos básicos, boas práticas e exemplos práticos para reforçar o aprendizado.
@@ -28,7 +27,6 @@ Este repositório contém meus estudos e experimentos em TypeScript, abordando c
 16. [Métodos Estáticos](#métodos-estáticos)
 17. [Readonly](#readonly)
 18. [Interfaces com Implements](#interfaces-com-implements)
-
 ---
 
 ## Configuração Inicial
@@ -78,8 +76,6 @@ let statusPedido: boolean = true;
 statusPedido = false;
 ```
 
-Descrição: Tipos primitivos são os tipos básicos em TypeScript, como `string`, `number` e `boolean`, que ajudam a garantir a integridade e segurança dos dados durante a execução do programa.
-
 ---
 
 ## Arrays e Objetos
@@ -100,8 +96,6 @@ Também podemos usar tuplas:
 let pedido: [string, number, boolean] = ["Pizza", 2, true];
 ```
 
-Descrição: Arrays e objetos permitem armazenar múltiplos valores em variáveis. Arrays são para listas ordenadas, enquanto objetos são usados para agrupar propriedades relacionadas.
-
 ---
 
 ## Any e Union Types
@@ -119,8 +113,6 @@ let valor: string | number;
 valor = "Sérgio";
 valor = 123;
 ```
-
-Descrição: `any` permite que uma variável seja de qualquer tipo, e `Union Types` possibilitam que uma variável aceite mais de um tipo específico, aumentando a flexibilidade do código.
 
 ---
 
@@ -140,8 +132,6 @@ const erro = (): never => {
 };
 ```
 
-Descrição: `void` é usado para funções que não retornam valor, enquanto `never` é utilizado em funções que sempre lançam erro ou entram em um loop infinito, sem retornar normalmente.
-
 ---
 
 ## Type Aliases
@@ -155,8 +145,6 @@ usuarioID = 123;
 usuarioID = "abc123";
 ```
 
-Descrição: Type Aliases permitem a criação de novos tipos personalizados, proporcionando legibilidade e reutilização de tipos em todo o código.
-
 ---
 
 ## String Literal Types
@@ -166,8 +154,6 @@ Define valores específicos para uma variável:
 let eventoMouse: "click" | "dblclick" | "mouseup";
 eventoMouse = "click";
 ```
-
-Descrição: String Literal Types ajudam a restringir valores possíveis para uma variável, melhorando a legibilidade e segurança do código.
 
 ---
 
@@ -182,8 +168,6 @@ const saudar = (nome: string, idade?: number): string => {
 console.log(saudar("Sérgio"));
 console.log(saudar("Sérgio", 31));
 ```
-
-Descrição: Parâmetros opcionais permitem que você defina se uma variável pode ou não ser obrigatória em uma função, oferecendo flexibilidade.
 
 ---
 
@@ -205,8 +189,6 @@ const aniversario: { nome: string; mes: Mes } = {
 console.log(aniversario);
 ```
 
-Descrição: `enum` é uma maneira de definir conjuntos de valores constantes nomeados, tornando o código mais legível e fácil de manter.
-
 ---
 
 ## Classes
@@ -227,8 +209,6 @@ class Pessoa {
 const pessoa1 = new Pessoa("Sergio Soares", 31);
 console.log(pessoa1.nome); // Sergio Soares
 ```
-
-Descrição: Classes são estruturas que ajudam a definir modelos de objetos com propriedades e métodos que podem ser reutilizados em instâncias.
 
 ---
 
@@ -255,8 +235,6 @@ const pessoa = new Pessoa("João", 25);
 console.log(pessoa.saudacao());
 ```
 
-Descrição: Métodos são funções definidas dentro de classes para descrever o comportamento ou ações que podem ser realizadas por objetos instanciados.
-
 ---
 
 ## Modificadores de Acesso
@@ -281,8 +259,6 @@ class Pessoa {
 }
 ```
 
-Descrição: Modificadores de acesso controlam a visibilidade e acessibilidade de propriedades e métodos em uma classe.
-
 ---
 
 ## Herança
@@ -306,8 +282,6 @@ class Cachorro extends Animal {
 const dog = new Cachorro("Rex");
 console.log(dog.latir()); // Au Au!
 ```
-
-Descrição: A herança permite que classes filhas herdem comportamentos e propriedades de classes pai.
 
 ---
 
@@ -335,8 +309,6 @@ class Pessoa {
 }
 ```
 
-Descrição: Getters e Setters permitem que você acesse ou altere valores de propriedades privadas de forma controlada.
-
 ---
 
 ## Classes Abstratas
@@ -355,8 +327,6 @@ class Engenheiro extends Pessoa {
 }
 ```
 
-Descrição: Classes abstratas fornecem um esqueleto para outras classes, forçando-as a implementar os métodos definidos.
-
 ---
 
 ## Métodos Estáticos
@@ -373,8 +343,6 @@ class Utils {
 console.log(Utils.somar(5, 3)); // 8
 ```
 
-Descrição: Métodos estáticos são chamados diretamente na classe, sem a necessidade de instanciar um objeto.
-
 ---
 
 ## Readonly
@@ -389,8 +357,6 @@ class Pessoa {
     }
 }
 ```
-
-Descrição: Atributos `readonly` impedem que valores sejam alterados após a criação do objeto.
 
 ---
 
@@ -420,5 +386,4 @@ class Professor implements Pessoa {
 }
 ```
 
-Descrição: Interfaces garantem que classes implementem um conjunto específico de propriedades e métodos, promovendo a consistência no código.
 ---
